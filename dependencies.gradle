@@ -1,0 +1,166 @@
+ext {
+
+    // Android
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 31
+    androidCompileSdkVersion = 31
+
+    // Android Libraries
+    appcompatVersion = '1.4.1'
+    materialVersion = '1.5.0'
+    activityKtxVersion = '1.4.0'
+    fragmentKtxVersion = '1.4.0'
+    contextKtxVersion = '1.7.0'
+    lifecycleVersion = '2.2.0'
+    roomVersion = '2.4.2'
+    constraintLayoutVersion = '2.1.3'
+    recyclerviewVersion = '1.0.0'
+    cardViewVersion = '1.0.0'
+    // Other Libraries.
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.8.6'
+    rxJavaVersion = '3.0.0'
+    retrofitVersion = '2.9.0'
+    httpLoggingIntercepterVersion = '4.9.1'
+    rxAndroidVersion = '3.0.0'
+    glideVersion = '4.11.0'
+    threeTenABPVersion = '1.2.0'
+
+    //Testing
+    jUnitVersion = '4.13.2'
+    hamcrestVersion = '2.1'
+    mockitoKotlinVersion = '2.1.0'
+
+    // Module - "app" dependencies.
+    appUiDependencies = [
+            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            androidAppCompact    : "androidx.appcompat:appcompat:${appcompatVersion}",
+            constraintLayout     : "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
+            recyclerView         : "androidx.recyclerview:recyclerview:${recyclerviewVersion}",
+            navigationFragment   : "androidx.navigation:navigation-fragment:${navigationVersion}",
+            navigationUI         : "androidx.navigation:navigation-ui:${navigationVersion}",
+            navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:${navigationVersion}",
+            navigationUIKtx      : "androidx.navigation:navigation-ui-ktx:${navigationVersion}",
+            cardView             : "androidx.cardview:cardview:${cardViewVersion}",
+            lifecycle            : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+            lifecycleCompiler    : "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+            roomRuntime          : "androidx.room:room-runtime:${roomVersion}",
+            roomCompiler         : "androidx.room:room-compiler:${roomVersion}",
+            javaxAnnotation      : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject          : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava               : "io.reactivex.rxjava3:rxjava:${rxJavaVersion}",
+            rxAndroid            : "io.reactivex.rxjava3:rxandroid:${rxAndroidVersion}",
+            hiltAndroid          : "com.google.dagger:hilt-android:${daggerHiltAndroidVersion}",
+            hiltCompiler         : "com.google.dagger:hilt-android-compiler:${daggerHiltAndroidVersion}",
+            glide                : "com.github.bumptech.glide:glide:${glideVersion}",
+            gson                 : "com.google.code.gson:gson:${gsonVersion}",
+            activityKtx          : "androidx.activity:activity-ktx:${activityKtxVersion}",
+            fragmentKtx          : "androidx.fragment:fragment-ktx:${fragmentKtxVersion}",
+            contextCore          : "androidx.core:core-ktx:${contextKtxVersion}",
+            material             : "com.google.android.material:material:${materialVersion}"
+    ]
+
+    // Module - "domain" dependencies.
+    domainDependencies = [
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava         : "io.reactivex.rxjava3:rxjava:${rxJavaVersion}",
+            retrofit       : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            gsonConverter  : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            rxAdapter      : "com.squareup.retrofit2:adapter-rxjava3:${retrofitVersion}",
+    ]
+
+    // Module - "domain" test dependencies.
+    domainTestDependencies = [
+            junit        : "junit:junit:${jUnitVersion}",
+            hamcrest     : "org.hamcrest:hamcrest:${hamcrestVersion}",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"
+    ]
+
+    // Module - "data" dependencies.
+    dataDependencies = [
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava         : "io.reactivex.rxjava3:rxjava:${rxJavaVersion}",
+    ]
+
+    // Module - "data" test dependencies.
+    dataTestDependencies = [
+            junit        : "junit:junit:${jUnitVersion}",
+            hamcrest     : "org.hamcrest:hamcrest:${hamcrestVersion}",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"
+    ]
+
+    // Module - "remote" dependencies.
+    remoteDependencies = [
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava            : "io.reactivex.rxjava3:rxjava:${rxJavaVersion}",
+            threeTenADP       : "com.jakewharton.threetenabp:threetenabp:${threeTenABPVersion}",
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            gsonConverter     : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            rxAdapter         : "com.squareup.retrofit2:adapter-rxjava3:${retrofitVersion}",
+            hiltAndroid       : "com.google.dagger:hilt-android:${daggerHiltAndroidVersion}",
+            hiltCompiler      : "com.google.dagger:hilt-android-compiler:${daggerHiltAndroidVersion}",
+            loggingIntercepter: "com.squareup.okhttp3:logging-interceptor:${httpLoggingIntercepterVersion}",
+    ]
+
+    // Module - "remote" test dependencies.
+    remoteTestDependencies = [
+            junit   : "junit:junit:${jUnitVersion}",
+            hamcrest: "org.hamcrest:hamcrest:${hamcrestVersion}",
+    ]
+
+    // Module - "cache" dependencies.
+    cacheDependencies = [
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            roomRuntime    : "androidx.room:room-runtime:${roomVersion}",
+            roomCompiler   : "androidx.room:room-compiler:${roomVersion}",
+            roomRxJava     : "androidx.room:room-rxjava3:${roomVersion}",
+            rxJava         : "io.reactivex.rxjava3:rxjava:${rxJavaVersion}",
+    ]
+
+    // Module - "cache" test dependencies.
+    cacheTestDependencies = [
+            junit   : "junit:junit:${jUnitVersion}",
+            hamcrest: "org.hamcrest:hamcrest:${hamcrestVersion}",
+    ]
+
+    // Module - "presentation" dependencies.
+    presentationDependencies = [
+            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            lifecycle        : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+            lifecycleCompiler: "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+            javaxAnnotation  : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject      : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava           : "io.reactivex.rxjava3:rxjava:${rxJavaVersion}",
+            retrofit         : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            hiltAndroid      : "com.google.dagger:hilt-android:${daggerHiltAndroidVersion}",
+            hiltCompiler     : "com.google.dagger:hilt-android-compiler:${daggerHiltAndroidVersion}",
+
+    ]
+
+    // Module - "presentation" test dependencies.
+    presentationTestDependencies = [
+            junit           : "junit:junit:${jUnitVersion}",
+            lifecycleTesting: "androidx.arch.core:core-testing:${lifecycleVersion}",
+            hamcrest        : "org.hamcrest:hamcrest:${hamcrestVersion}",
+            mockitoKotlin   : "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
+    ]
+
+    // Module - "httpclient" dependencies.
+    httpclientDependencies = [
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            gson           : "com.google.code.gson:gson:${gsonVersion}",
+    ]
+
+
+}

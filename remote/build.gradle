@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def remoteDependencies = rootProject.ext.remoteDependencies
+    def remoteTestDependencies = rootProject.ext.remoteTestDependencies
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Module Dependencies.
+    implementation project(':data')
+    // Kotlin.
+    implementation remoteDependencies.kotlin
+
+    // Libraries.
+    implementation remoteDependencies.javaxAnnotation
+    implementation remoteDependencies.javaxInject
+    implementation remoteDependencies.rxJava
+    implementation remoteDependencies.threeTenADP
+    implementation remoteDependencies.retrofit
+    implementation remoteDependencies.gsonConverter
+    implementation remoteDependencies.rxAdapter
+    implementation remoteDependencies.hiltAndroid
+    implementation remoteDependencies.loggingIntercepter
+    kapt remoteDependencies.hiltCompiler
+    // Testing.
+    testImplementation remoteTestDependencies.junit
+    testImplementation remoteTestDependencies.hamcrest
+}

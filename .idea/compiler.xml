@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="NewsApp.app" target="11" />
+      <module name="NewsApp.cache" target="11" />
+      <module name="NewsApp.presentation" target="11" />
+      <module name="NewsApp.remote" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

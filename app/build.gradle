@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdk globalConfiguration["androidCompileSdkVersion"]
+    defaultConfig {
+        applicationId "com.kuldip.newsapp"
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(path: ':presentation')
+    implementation project(path: ':data')
+    implementation project(path: ':domain')
+    implementation project(path: ':remote')
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    def appUiDependencies = rootProject.ext.appUiDependencies
+    // Kotlin.
+    implementation appUiDependencies.kotlin
+    implementation project(':cache')
+    // Android.
+    implementation appUiDependencies.androidAppCompact
+    implementation appUiDependencies.activityKtx
+    implementation appUiDependencies.fragmentKtx
+    implementation appUiDependencies.contextCore
+    implementation appUiDependencies.constraintLayout
+    implementation appUiDependencies.recyclerView
+    implementation appUiDependencies.navigationFragment
+    implementation appUiDependencies.navigationUI
+    implementation appUiDependencies.navigationFragmentKtx
+    implementation appUiDependencies.navigationUIKtx
+    implementation appUiDependencies.cardView
+    implementation appUiDependencies.lifecycle
+    implementation appUiDependencies.material
+    kapt appUiDependencies.lifecycleCompiler
+    implementation appUiDependencies.roomRuntime
+    kapt appUiDependencies.roomCompiler
+
+    // Libraries.
+    implementation appUiDependencies.javaxAnnotation
+    implementation appUiDependencies.javaxInject
+    implementation appUiDependencies.rxJava
+    implementation appUiDependencies.rxAndroid
+    implementation appUiDependencies.hiltAndroid
+    kapt appUiDependencies.hiltCompiler
+    implementation appUiDependencies.glide
+    implementation appUiDependencies.gson
+}

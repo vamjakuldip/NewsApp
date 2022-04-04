@@ -1,0 +1,24 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    def domainDependencies = rootProject.ext.domainDependencies
+    def domainTestDependencies = rootProject.ext.domainTestDependencies
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin.
+    implementation domainDependencies.kotlin
+
+    // Libraries.
+    implementation domainDependencies.javaxAnnotation
+    implementation domainDependencies.javaxInject
+    implementation domainDependencies.rxJava
+
+    // Testing.
+    testImplementation dataTestDependencies.junit
+    testImplementation dataTestDependencies.hamcrest
+    testImplementation dataTestDependencies.mockitoKotlin
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
